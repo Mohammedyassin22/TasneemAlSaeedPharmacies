@@ -1,6 +1,44 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "الصفحة الرئيسية";
+    Layout = "_Layout";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p></p>
+<style>
+    .marquee-container {
+        background-color: #ffffff;
+        color: #721c24;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 1px; /* إضافة هامش علوي */
+    }
+
+    .marquee-content {
+        display: inline-block;
+        animation: marquee 10s linear infinite;
+    }
+
+    @@keyframes marquee {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
+<!-- شريط الإعلانات المتحرك -->
+<div class="marquee-container">
+    <div class="marquee-content">
+        🚨 Announcement: 50% off all products! 🚨
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+}
