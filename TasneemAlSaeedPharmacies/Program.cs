@@ -1,3 +1,7 @@
+using DAL.Data.Context;
+using Microsoft.EntityFrameworkCore;
+using System;
+
 namespace TasneemAlSaeedPharmacies
 {
     public class Program
@@ -8,7 +12,12 @@ namespace TasneemAlSaeedPharmacies
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //DAL
+            builder.Services.AddDbContext<PharmaciesDbContext>(options =>
+     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+            //
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
